@@ -1,0 +1,103 @@
+/* === base y tipografías === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg-1:#070607;
+  --panel:#0f0f10;
+  --muted:#bdbdbd;
+  --purple:#7b3fe4;
+  --accent:#9c63ff;
+  --danger:#e14b4b;
+}
+
+*{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
+body{margin:0;background:linear-gradient(180deg,var(--bg-1),#0b0b0b);color:#fff;min-height:100vh;}
+
+/* ===== LOGIN LAYOUT ===== */
+.login-wrap{width:95%;max-width:1100px;margin:40px auto;display:flex;gap:24px;align-items:stretch}
+.brand-panel{flex:1;border-radius:14px;padding:36px;background:linear-gradient(135deg,var(--purple),#3c0068);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(0,0,0,.6);transition:transform .6s}
+.brand-logo{width:100px;height:100px;border-radius:16px;object-fit:cover;border:4px solid rgba(255,255,255,0.08);box-shadow:0 10px 30px rgba(0,0,0,0.4)}
+.brand-panel h1{margin-top:18px;font-size:28px}
+.brand-panel p{color:rgba(255,255,255,.85);margin-top:8px}
+
+.auth-panel{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px}
+.card.auth-card{width:100%;max-width:480px;background:var(--panel);padding:20px;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.6);transition:all .3s}
+.role-toggle{width:100%;display:flex;align-items:center;justify-content:flex-end;margin-bottom:12px;position:relative}
+.toggle-labels{display:flex;border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,0.04)}
+.toggle-labels .role{padding:8px 14px;background:transparent;border:none;color:var(--muted);cursor:pointer}
+.toggle-labels .role.active{background:rgba(255,255,255,0.03);color:var(--purple);font-weight:600}
+.toggle-slider{position:absolute;right:0;top:-6px;width:84px;height:6px;background:linear-gradient(90deg,var(--purple),var(--accent));border-radius:6px;opacity:0.95;transform:translateX(0);transition:transform .35s ease}
+
+input, textarea, .file-label{width:100%;display:block;margin:8px 0;padding:10px;border-radius:8px;background:#121212;border:1px solid rgba(255,255,255,0.03);color:#fff;outline:none}
+.file-label input{display:none}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+.btn.primary{background:linear-gradient(90deg,var(--purple),var(--accent));color:#fff;box-shadow:0 10px 30px rgba(123,63,228,0.14)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff}
+.btn.danger{background:var(--danger);color:#fff}
+.muted{color:var(--muted);font-size:13px}
+.hidden{display:none}
+.footer-note{margin-top:12px;color:var(--muted);font-size:12px}
+
+/* ===== DASHBOARD ===== */
+.dash-top{display:flex;justify-content:space-between;align-items:center;padding:12px 28px;background:rgba(15,15,16,0.9);border-bottom:1px solid rgba(255,255,255,0.03)}
+.dash-top .dash-left{display:flex;align-items:center;gap:12px}
+.dash-logo{width:42px;height:42px}
+.dash-right{display:flex;align-items:center;gap:10px}
+.btn.ghost{padding:8px;border-radius:8px}
+
+.dash-main{display:flex;gap:18px;padding:24px;max-width:1200px;margin:18px auto;width:95%}
+.sidebar{width:260px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:16px;border-radius:12px;min-height:400px}
+.users-list{display:flex;flex-direction:column;gap:8px;max-height:420px;overflow:auto}
+.user-row{display:flex;align-items:center;gap:10px;padding:8px;border-radius:8px;cursor:pointer}
+.user-row:hover{background:rgba(255,255,255,0.02)}
+.reviews-list{display:flex;flex-direction:column;gap:10px;max-height:300px;overflow:auto}
+.review{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px}
+
+/* content area */
+.content-area{flex:1;min-height:500px}
+.panel{background:linear-gradient(180deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px}
+.profile-row{display:flex;gap:14px;align-items:flex-start}
+.profile-card{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
+.avatar{width:72px;height:72px;border-radius:12px;background:#222;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.info-card{flex:1;padding:10px;border-radius:10px;background:rgba(0,0,0,0.3)}
+.progress-line{height:14px;background:#2a2a2a;border-radius:10px;margin:8px 0;position:relative;overflow:hidden}
+.progress-line .fill{position:absolute;left:0;top:0;height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--accent));transition:width .6s ease;border-radius:10px}
+.progress-nums{display:flex;gap:8px;justify-content:space-between;margin-top:10px}
+.number{width:36px;height:36px;border-radius:8px;background:#222;display:flex;align-items:center;justify-content:center;cursor:default}
+.number.filled{background:linear-gradient(90deg,var(--purple),var(--accent));box-shadow:0 10px 24px rgba(123,63,228,0.12);transform:translateY(-4px);transition:transform .25s}
+.number.premio{background:gold;color:#111;font-weight:700}
+
+/* mid row */
+.mid-row{display:flex;gap:14px;margin-top:16px}
+.mid-row .card{flex:1;padding:12px}
+textarea{min-height:80px;border-radius:8px;padding:8px}
+
+/* admin sections */
+.admin-top{display:flex;justify-content:space-between;align-items:center}
+.stats-card{background:rgba(255,255,255,0.02);padding:8px;border-radius:8px}
+.admin-middle{display:flex;gap:14px;margin-top:14px}
+#adminUsersArea .ticket{margin-bottom:12px}
+.ticket{padding:12px;border-radius:8px;background:rgba(255,255,255,0.02)}
+.ticket-grid{display:flex;gap:8px;margin-top:8px}
+.ticket-number{width:36px;height:36px;border-radius:6px;background:#222;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.ticket-number.marked{background:linear-gradient(90deg,var(--purple),var(--accent));box-shadow:0 8px 20px rgba(123,63,228,0.12);transform:translateY(-4px)}
+.ticket-number.premio{background:gold;color:#111}
+
+/* responsive */
+@media (max-width:900px){
+  .login-wrap{flex-direction:column;padding:16px}
+  .dash-main{flex-direction:column}
+  .sidebar{width:100%}
+  .mid-row{flex-direction:column}
+}
+/* --- Logo del login con 50% de transparencia --- */
+#login-page img.logo {
+  opacity: 0.5;         /* 50% de transparencia */
+  transition: opacity 0.3s ease; /* animación suave */
+}
+
+/* Al pasar el mouse, se ve más sólido */
+#login-page img.logo:hover {
+  opacity: 0.8;
+}

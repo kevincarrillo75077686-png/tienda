@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mi Tienda - Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <main class="login-wrap">
+      <aside class="brand-panel">
+        <img src="logo.png" alt="logo" class="brand-logo" id="brandPreview">
+        <h1>Mi Tienda</h1>
+        <p>Ventas SHEIN & TEMU</p>
+      </aside>
+
+      <section class="auth-panel">
+        <div class="role-toggle">
+          <div class="toggle-labels">
+            <button id="roleClient" class="role active">Cliente</button>
+            <button id="roleAdmin" class="role">Administrador</button>
+          </div>
+          <div class="toggle-slider" id="roleSlider"></div>
+        </div>
+
+        <div class="card auth-card">
+          <!-- LOGIN -->
+          <div id="loginBox">
+            <h2>Iniciar sesión</h2>
+            <form id="loginForm">
+              <input id="loginEmail" type="email" placeholder="Correo" required />
+              <input id="loginPass" type="password" placeholder="Contraseña" required />
+              <button class="btn primary" type="submit">Entrar</button>
+            </form>
+            <p class="muted">¿No tienes cuenta? <a href="#" id="showRegister">Regístrate</a></p>
+          </div>
+
+          <!-- REGISTER -->
+          <div id="registerBox" class="hidden">
+            <h2>Crear cuenta (Cliente)</h2>
+            <form id="registerForm">
+              <input id="regName" placeholder="Nombre" required />
+              <input id="regEmail" type="email" placeholder="Correo" required />
+              <input id="regPass" type="password" placeholder="Contraseña" required />
+              <label class="file-label">Foto (opcional)
+                <input id="regAvatar" type="file" accept="image/*" />
+              </label>
+              <button class="btn primary" type="submit">Crear cuenta</button>
+            </form>
+            <p class="muted"><a href="#" id="backToLogin">Volver al login</a></p>
+          </div>
+        </div>
+
+        <p class="footer-note">Bienvenido a nuestra pagina web, espero disfrute trabajar con nosotros</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard - Mi Tienda</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dash-page">
+    <header class="dash-top">
+      <div class="dash-left">
+        <img src="logo.png" alt="logo" class="dash-logo">
+        <h1>Mi Tienda</h1>
+      </div>
+      <div class="dash-right">
+        <span id="userLabel"></span>
+        <button id="copyLink" class="btn ghost">Copiar enlace</button>
+        <button id="logoutBtn" class="btn danger">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <main class="dash-main">
+      <!-- Sidebar admin (se muestra solo admin) -->
+      <aside id="sidebar" class="sidebar hidden">
+        <h3>Usuarios</h3>
+        <div id="usersList" class="users-list"></div>
+        <hr/>
+        <h4>Reseñas</h4>
+        <div id="adminReviews" class="reviews-list small"></div>
+      </aside>
+
+      <!-- Main content (client or admin panels) -->
+      <section id="content" class="content-area">
+        <!-- Client panel -->
+        <div id="clientPanel" class="panel hidden">
+          <div class="profile-row">
+            <div class="profile-card">
+              <div class="avatar" id="clientAvatar"></div>
+              <div>
+                <h3 id="clientName"></h3>
+                <div class="muted" id="clientEmail"></div>
+              </div>
+            </div>
+            <div class="info-card">
+              <h4>Progreso del ticket</h4>
+              <div class="progress-line" id="progressLine"></div>
+              <div class="progress-nums" id="progressNums"></div>
+              <div class="muted small">Premio al completar 9 números</div>
+            </div>
+          </div>
+
+          <div class="mid-row">
+            <div class="card">
+              <h4>Reseñas</h4>
+              <div id="reviewsList" class="reviews-list"></div>
+              <textarea id="myReview" placeholder="Deja una reseña..."></textarea>
+              <button id="sendReview" class="btn">Publicar reseña</button>
+            </div>
+
+            <div class="card">
+              <h4>Información y enlace</h4>
+              <div class="muted">Copia el enlace a tu cuenta:</div>
+              <input id="accountLink" readonly />
+              <button id="copyAccount" class="btn">Copiar enlace</button>
+              <hr />
+              <h4>Sobre nosotros</h4>
+              <div id="aboutMe" class="muted">Aquí podrás agregar información sobre la tienda (la completarás tú).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admin panel -->
+        <div id="adminPanel" class="panel hidden">
+          <div class="admin-top">
+            <h2>Panel administrador</h2>
+            <div class="stats-card">
+              <div>Total usuarios: <strong id="statUsers">0</strong></div>
+              <div>Ventas (mes actual): <strong id="statSales">$0.00</strong></div>
+            </div>
+          </div>
+
+          <div class="admin-middle">
+            <div class="card">
+              <h4>Usuarios / Tickets</h4>
+              <div id="adminUsersArea"></div>
+            </div>
+
+            <div class="card">
+              <h4>Reseñas</h4>
+              <div id="reviewsAdminList" class="reviews-list"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
